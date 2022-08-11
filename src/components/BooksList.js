@@ -1,4 +1,5 @@
 import React from 'react';
+import AddBookForm from './AddBookForm';
 import Book from './Book';
 
 function BookList() {
@@ -8,13 +9,16 @@ function BookList() {
     author: 'jafer',
   }];
   return (
-    bookArray.map((book) => (
-      <Book
-        key={book.id}
-        title={book.title}
-        author={book.author}
-      />
-    ))
+    <>
+      {bookArray.map((book) => (
+        <Book
+          key={book.id}
+          title={book.title}
+          author={book.author}
+        />
+      ))}
+      <AddBookForm />
+    </>
   );
 }
 
