@@ -34,11 +34,6 @@ export default function reducer(state = initialState, action = {}) {
   }
 }
 
-// Action Creators
-/* export function addBook(book) {
-  return { type: ADD, book };
-} */
-
 export const addBook = (book) => async (dispatch) => {
   try {
     const res = await BookService.create({
@@ -54,10 +49,6 @@ export const addBook = (book) => async (dispatch) => {
     return Promise.reject(err);
   }
 };
-
-/* export function removeBook(bookID) {
-  return { type: REMOVE, bookID };
-} */
 
 export const removeBook = (id) => async (dispatch) => {
   try {
