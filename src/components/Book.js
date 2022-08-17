@@ -1,11 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBook, retrieveBooks } from '../redux/books/books';
 
 function Book(props) {
   const { title, author, id } = { ...props };
   const dispatch = useDispatch();
-  const handleClick = () => dispatch(removeBook(id));
+  const handleClick = async () => {
+    await dispatch(removeBook(id));
+    dispatch(retrieveBooks());
+  };
   return (
     <section className="book">
       <h2 className="bookTitle">{title}</h2>
