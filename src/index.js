@@ -13,7 +13,9 @@ root.render(
     <Provider store={bookStore}>
       <BrowserRouter>
         <Navbar />
-        <App />
+        <div className="mainContainer">
+          <App />
+        </div>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
