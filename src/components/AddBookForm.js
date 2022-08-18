@@ -22,12 +22,17 @@ function AddBookForm() {
     e.target.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>ADD NEW BOOK</h2>
-      <input type="text" id="titleInput" required name="title" placeholder="Book title" onChange={newBook} />
-      <input type="text" id="authorInput" required name="author" placeholder="Author" onChange={newBook} />
-      <button type="submit">ADD BOOK</button>
-    </form>
+    <>
+      <div className="horizontal-divider" />
+      <div className="form-container">
+        <h2 className="form-title">ADD NEW BOOK</h2>
+        <form onSubmit={handleSubmit} className="form">
+          <input type="text" className="input title-input" id="titleInput" required name="title" placeholder="Book title" onChange={newBook} />
+          <input type="text" className="input" id="authorInput" required name="author" placeholder="Author" onChange={newBook} />
+          <button className="primary-button-big blueButton" type="submit">ADD BOOK</button>
+        </form>
+      </div>
+    </>
   );
 }
 

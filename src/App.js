@@ -7,7 +7,9 @@ import { retrieveBooks } from './redux/books/books';
 
 function App() {
   const dispatch = useDispatch();
-  useEffect(() => { dispatch(retrieveBooks()); });
+  useEffect(() => {
+    dispatch(retrieveBooks());
+  });
   return (
     <Routes>
       <Route path="/" element={<BookList />} />

@@ -4,22 +4,22 @@ const links = [
   {
     id: 1,
     path: '/',
-    text: 'BooksList',
+    text: 'BOOKS',
   },
   {
     id: 2,
     path: '/categories',
-    text: 'Categories',
+    text: 'CATEGORIES',
   },
 ];
 function Navbar() {
   return (
     <div className="navbarContainer">
-      <nav>
+      <nav className="navbar">
         <h1 className="mainTitle">Bookstore CMS</h1>
-        <ul className="navBar">
+        <ul className="navBarUl">
           {links.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} className={link.text}>
               <Link to={link.path}>{link.text}</Link>
             </li>
           ))}
